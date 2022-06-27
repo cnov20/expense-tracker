@@ -5,8 +5,8 @@ import { Ionicons } from '@expo/vector-icons';
 const IconButton = ( {icon, size, color, onPress}) => {
   return (
     <Pressable onPress={onPress} pressed={(pressed) => pressed && styles.pressed}>
-            <View>
-            <Ionicons name={icon} size={size} color={color}/>
+            <View style={styles.buttonContainer}>
+              <Ionicons name={icon} size={size} color={color}/>
             </View>
         </Pressable>
       
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     buttonContainer: {
         borderRadius: 24,
         padding: 5,
-        margin: 10,
+        margin: 5,
     },
     pressed: {
         opacity: 0.75
