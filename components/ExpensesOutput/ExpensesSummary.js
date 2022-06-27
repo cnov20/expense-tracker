@@ -12,7 +12,6 @@ const ExpensesSummary = ({ expenses, expensesPeriod }) => {
 
   return (
     <View>
-          <Text>Expenses Summary</Text>
           <View style={styles.container}>
               <Text style={styles.period}>Period: {expensesPeriod}</Text>
               <Text style={styles.sum}>Total: ${expensesSum.toFixed(2)}</Text>
