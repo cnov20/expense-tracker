@@ -3,6 +3,7 @@ import react from 'react'
 
 import ExpensesList from './ExpensesList'
 import ExpensesSummary from './ExpensesSummary'
+import { GlobalStyles } from '../../constants/styles'
 
 const DUMMY_EXPENSES = [
     {
@@ -27,13 +28,19 @@ const DUMMY_EXPENSES = [
 
 const ExpensesOutput = ({ expenses, expensesPeriod }) => {
   return (
-      <View>
+      <View style={styles.container}>
           <ExpensesSummary expenses={DUMMY_EXPENSES}  expensesPeriod={expensesPeriod}/>
-          <ExpensesList/>
-    </View>
+          <ExpensesList expenses={DUMMY_EXPENSES} />
+        </View>
   )
 }
 
-export default ExpensesOutput
+const styles = StyleSheet.create({
+    container: {
+        // flex: 1,
+        padding: 24,
+        backgroundColor: GlobalStyles.colors.primary700
+    }
+})
 
-const styles = StyleSheet.create({})
+export default ExpensesOutput
